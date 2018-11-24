@@ -1,4 +1,6 @@
-package com.wf.api.model;
+package com.wf.api.model.xml;
+
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,6 +16,20 @@ import lombok.Setter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Night {
 	
-	 @XmlElement(name = "phenomenon")
-	 private String phenomenon;
+	@XmlElement
+	private String phenomenon;
+	 
+	@XmlElement(name = "tempmin")
+	private float minTemperature;
+	 
+	@XmlElement(name = "tempmax")
+	private float maxTemperature;
+	 
+	@XmlElement
+	private String text;
+	
+	
+	@XmlElement(name = "place", type=Place.class)
+	private List<Place> listPlace;
+	
 }

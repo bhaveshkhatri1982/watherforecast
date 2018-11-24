@@ -1,6 +1,4 @@
-package com.wf.api.model;
-
-import java.util.List;
+package com.wf.api.model.xml;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,10 +11,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@XmlRootElement(name = "forecasts")
+@XmlRootElement(name = "forecast")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Forecasts {
+public class ForecastXML {
 	
-	@XmlElement(name = "forecast", type=Forecast.class)
-	private List<Forecast> listForecast;
+	@XmlAttribute(name = "date")
+	private String date;
+	
+	@XmlElement(name = "night", type=Night.class)
+	private Night night;
+	
+	@XmlElement(name = "day", type=Day.class)
+	private Day day;
+	
 }
