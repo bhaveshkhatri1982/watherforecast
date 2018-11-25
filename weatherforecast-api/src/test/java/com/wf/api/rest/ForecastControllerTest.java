@@ -22,7 +22,7 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration
 public class ForecastControllerTest extends TestCase {
 	
-	private final String BASE_URI = "http://localhost:8080/api/v1/weather/";
+	private final String BASE_URI = "http://localhost:8081/api/v1/weather/";
 	
 	private MockMvc mockMvc;
 
@@ -39,12 +39,7 @@ public class ForecastControllerTest extends TestCase {
     }
 
     @Test
-    public void testGetForecast() throws Exception {
+    public void testGetAForecast() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(BASE_URI+"/get")).andExpect(MockMvcResultMatchers.status().isOk());
-    }
-    
-    @Test
-    public void testGetAllCities() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get(BASE_URI+"/get/cities")).andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

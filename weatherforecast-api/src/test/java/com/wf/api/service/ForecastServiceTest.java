@@ -41,9 +41,6 @@ public class ForecastServiceTest {
 		Forecasts forecasts = weatherClient.fetchWeatherData();
 		forecastService.saveForecast(forecasts);
 		
-		Forecast maybeForecast = forecastService.findByDate(LocalDate.now());
-		assertThat(maybeForecast, hasProperty("date", equalTo(LocalDate.now())));
-		
 		Forecast maybeNextForecast = forecastService.findByDate(LocalDate.now().plusDays(1));
 		assertThat(maybeNextForecast, hasProperty("date", equalTo(LocalDate.now().plusDays(1))));
 		

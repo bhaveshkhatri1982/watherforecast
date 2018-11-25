@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="assets/css/angular-datepicker.css">
     <link rel="stylesheet" href="assets/css/angular-busy.css">
     <link rel="stylesheet" type="text/css" href="assets/plugins/toastr/css/angular-toastr.min.css" />
-
+	<style> 
+		.example {
+			overflow-wrap: break-word !important;
+		}
+	</style>
     <link href="http://annotorious.github.io/latest/themes/dark/annotorious-dark.css" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +31,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="javascript:void(0)" class="logo"> <span class="logo-mini"><b>Weather</b></span> <span class="logo-lg"><b>Report
+            <a href="javascript:void(0)" class="logo"> <span class="logo-mini"><b>Weather</b></span> <span class="logo-lg"><b>Weather Report
 				</b></span>
             </a>
             <nav class="navbar navbar-static-top">
@@ -97,9 +101,10 @@
                                 <div class="box box-primary">
                                     <div class="box-header with-border">
                                         <h1 class="box-title">Weather Forecast</h1>
+											
                                         <div class="box-tools">
                                         	<!-- input type="text" max-length="50" ng-model="city"/-->
-                                            <select class="form-control" ng-model="city" ng-options="city.name as city.name for city in listCity">
+											<select class="form-control label-info" ng-model="city" ng-options="city.name as city.name for city in listCity">
                                             	<option value="">---Please Select City----</option>
                                             </select>
                                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -119,36 +124,38 @@
                                                 </div>
                                                 <div class="product-info">
                                                     <a href="javascript:void(0)" class="product-title">
-                                                    	<h3>{{forecast.listForecastDetail[0].timeOfDay.label}}</h3>
-														<span class="lead text-warning">{{forecast.listForecastDetail[0].phenomenon}}</span>
-														<span class="lead text-danger">Temperature Min : {{forecast.listForecastDetail[0].minTemperature}}</span> 
-														<span class="lead text-info">Temperature Max : {{forecast.listForecastDetail[0].maxTemperature}}</span> 
-													</a> <span class="product-description"> 
-													<span class="text-success"><b>{{forecast.listForecastDetail[0].text}}</b></span></br>
-	                                                    <div ng-repeat="forecastPlaceDetail in forecast.listForecastDetail[0].listForecastPlaceDetail">
-	                                                        <div ng-if="forecastPlaceDetail.place.name==city">
-	                                                            <span class="lead text-success"><b> Place :	{{forecastPlaceDetail.place.name}}<b></span></br>
-	                                                            <span class="text-warning"> {{forecastPlaceDetail.phenomenon}}</span></br> 
-	                                                            <span class="text-danger"> Temperature Min : {{forecastPlaceDetail.minTemperature}}</span></br> 
-	                                                            <span class="text-info"> Temperature Max : {{forecastPlaceDetail.maxTemperature}}</span></br>
-	                                                        </div>
-	                                                    </div>
+                                                    	<h3 class="lead text-info"><b>{{forecast.listForecastDetail[0].timeOfDay.label}}</b></h3>
+														<span class="text-info">{{forecast.listForecastDetail[0].phenomenon}}</span>
+														<span class="text-info"><span class="text-warning">Temperature</span> Min : {{forecast.listForecastDetail[0].minTemperature}}</span> 
+														<span class="text-info">Max : {{forecast.listForecastDetail[0].maxTemperature}}</span> 
+													</a>
+													<span class=""> 
+														<div class="example"><b>{{forecast.listForecastDetail[0].text}}</b></div></br>
+														<div ng-repeat="forecastPlaceDetail in forecast.listForecastDetail[0].listForecastPlaceDetail">
+															<div ng-if="forecastPlaceDetail.place.name==city">
+																<span class="lead text-success">Place :	{{forecastPlaceDetail.place.name}}</span></br>
+																<span class="text-info"> {{forecastPlaceDetail.phenomenon}}</span></br> 
+																<span class="text-info"> <span class="text-warning">Temperature</span> Min : {{forecastPlaceDetail.minTemperature}}</span></br> 
+																<span class="text-info"> Max : {{forecastPlaceDetail.maxTemperature}}</span></br>
+															</div>
+														</div>
                                                     </span>
                                                 </div>
                                                 <div class="product-info">
                                                     <a href="javascript:void(0)" class="product-title">
-                                                    	<h3>{{forecast.listForecastDetail[1].timeOfDay.label}}</h3>
-														<span class="lead text-warning">{{forecast.listForecastDetail[0].phenomenon}}</span>
-														<span class="lead text-danger">Temperature Min :{{forecast.listForecastDetail[1].minTemperature}}</span>
-														<span class="lead text-info">Temperature Max : {{forecast.listForecastDetail[1].maxTemperature}}</span>
-													</a> <span class="product-description"> 
-													<span class="text-success"><b>{{forecast.listForecastDetail[1].text}}</b></span></br>
+                                                    	<h3 class="lead text-info"><b>{{forecast.listForecastDetail[1].timeOfDay.label}}</b></h3>
+														<span class="text-info">{{forecast.listForecastDetail[0].phenomenon}}</span>
+														<span class="text-info"><span class="text-warning">Temperature</span> Min :{{forecast.listForecastDetail[1].minTemperature}}</span>
+														<span class="text-info">Max : {{forecast.listForecastDetail[1].maxTemperature}}</span>
+													</a> 
+													<span class=""> 
+														<div class="example"><b>{{forecast.listForecastDetail[1].text}}</b></div></br>
 	                                                    <div ng-repeat="forecastPlaceDetail in forecast.listForecastDetail[1].listForecastPlaceDetail">
 	                                                        <div ng-if="forecastPlaceDetail.place.name==city">
-	                                                            <span class="lead text-success"><b> Place : {{forecastPlaceDetail.place.name}}<b></span></br> 
-	                                                            <span class="text-warning"> {{forecastPlaceDetail.phenomenon}}</span></br> 
-																<span class="text-danger"> Temperature Min : {{forecastPlaceDetail.minTemperature}}</span></br> 
-																<span class="text-info"> Temperature Max : {{forecastPlaceDetail.maxTemperature}}</span></br>
+	                                                            <span class="lead text-success">Place : {{forecastPlaceDetail.place.name}}</span></br> 
+	                                                            <span class="text-info"> {{forecastPlaceDetail.phenomenon}}</span></br> 
+																<span class="text-info"> <span class="text-warning">Temperature</span> Min : {{forecastPlaceDetail.minTemperature}}</span></br> 
+																<span class="text-info"> Max : {{forecastPlaceDetail.maxTemperature}}</span></br>
 	                                                        </div>
 	                                                    </div>
                                                     </span>

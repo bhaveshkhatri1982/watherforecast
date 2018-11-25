@@ -1016,8 +1016,6 @@ a:focus {
 }
 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
   color: #444444;
-  overflow: hidden;
-  text-overflow: ellipsis;
   padding: 10px;
 }
 .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
@@ -2069,9 +2067,6 @@ a:focus {
 .info-box-text {
   display: block;
   font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .info-box-text {
   text-transform: uppercase;
@@ -2628,9 +2623,7 @@ a:focus {
 .products-list .product-description {
   display: block;
   color: #999;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 .product-list-in-box > .item {
   -webkit-box-shadow: none;
@@ -2940,9 +2933,6 @@ table.text-center th {
 .users-list-name {
   font-weight: 600;
   color: #444;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .users-list-date {
   color: #999;
@@ -3352,9 +3342,6 @@ table.text-center th {
   position: relative;
   padding-left: 44px;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .btn-social > :first-child {
   position: absolute;
@@ -3395,9 +3382,6 @@ table.text-center th {
   position: relative;
   padding-left: 44px;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   height: 34px;
   width: 34px;
   padding: 0;

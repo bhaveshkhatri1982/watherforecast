@@ -33,15 +33,13 @@ public class PlaceRepositoryTest {
 	
 	@Test
     public void shouldSaveAndFetchPlace() throws Exception {
-		Place place = new Place();
 		
+		Place place = new Place();
 		place.setName("Tallinn");
-        
 		placeRepository.save(place);
 
 		Place maybePlace = placeRepository.findByName("Tallinn");
-
         assertThat(maybePlace, hasProperty("name", equalTo("Tallinn")));
-}
+	}
 	
 }
