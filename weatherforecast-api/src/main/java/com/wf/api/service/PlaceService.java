@@ -1,25 +1,28 @@
 package com.wf.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.wf.api.model.Forecast;
+import com.wf.api.model.Place;
 import com.wf.api.repository.ForecastRepository;
+import com.wf.api.repository.PlaceRepository;
 
 
-@Service("forecastDetailService")
+@Service("placeService")
 @Scope("prototype")
-public class ForecastDetailService {
+public class PlaceService {
 	
 	@Autowired
-    private ForecastRepository forecastRepository;
+    private PlaceRepository placeRepository;
 	
-	public void saveForecast(Forecast forecast) {
+	public List<Place> getAllCities(){
 		
-		forecastRepository.save(forecast);
+		return (List<Place>) placeRepository.findAll();
 	}
-	
 	
 }
 

@@ -1,4 +1,4 @@
-package com.wf.api.model.xml;
+package com.wf.api.weather.helper;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

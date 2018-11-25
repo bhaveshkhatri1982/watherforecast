@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>weatherforecast-api</artifactId>
-	<groupId>com.wf.api</groupId>
+	<groupId>com.wf</groupId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<dependencies>
@@ -62,12 +62,6 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.awaitility</groupId>
-			<artifactId>awaitility</artifactId>
-			<version>3.1.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

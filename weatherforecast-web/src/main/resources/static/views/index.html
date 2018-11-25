@@ -98,14 +98,9 @@
                                     <div class="box-header with-border">
                                         <h1 class="box-title">Weather Forecast</h1>
                                         <div class="box-tools">
-                                        	City : <!-- input type="text" max-length="50" ng-model="city"/-->
-                                            <select ng-model="city">
-                                                <option value="Harku">Harku</option>
-                                                <option value="Jõhvi">Jõhvi</option>
-                                                <option value="Tartu">Tartu</option>
-                                                <option value="Pärnu">Pärnu</option>
-                                                <option value="Kuressaare">Kuressaare</option>
-                                                <option value="Türi">Türi</option>
+                                        	<!-- input type="text" max-length="50" ng-model="city"/-->
+                                            <select class="form-control" ng-model="city" ng-options="city.name as city.name for city in listCity">
+                                            	<option value="">---Please Select City----</option>
                                             </select>
                                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
                                                 <i class="fa fa-minus"></i>
@@ -125,7 +120,7 @@
                                                 <div class="product-info">
                                                     <a href="javascript:void(0)" class="product-title">
                                                     	<h3>{{forecast.listForecastDetail[0].timeOfDay.label}}</h3>
-														<span class="lead text-warning">{{forecast[1].listForecastDetail[0].phenomenon}}</span>
+														<span class="lead text-warning">{{forecast.listForecastDetail[0].phenomenon}}</span>
 														<span class="lead text-danger">Temperature Min : {{forecast.listForecastDetail[0].minTemperature}}</span> 
 														<span class="lead text-info">Temperature Max : {{forecast.listForecastDetail[0].maxTemperature}}</span> 
 													</a> <span class="product-description"> 
@@ -143,7 +138,7 @@
                                                 <div class="product-info">
                                                     <a href="javascript:void(0)" class="product-title">
                                                     	<h3>{{forecast.listForecastDetail[1].timeOfDay.label}}</h3>
-														<span class="lead text-warning">{{forecast[1].listForecastDetail[0].phenomenon}}</span>
+														<span class="lead text-warning">{{forecast.listForecastDetail[0].phenomenon}}</span>
 														<span class="lead text-danger">Temperature Min :{{forecast.listForecastDetail[1].minTemperature}}</span>
 														<span class="lead text-info">Temperature Max : {{forecast.listForecastDetail[1].maxTemperature}}</span>
 													</a> <span class="product-description"> 

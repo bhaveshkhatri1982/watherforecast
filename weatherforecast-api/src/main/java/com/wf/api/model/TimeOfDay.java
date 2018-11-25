@@ -21,7 +21,6 @@ public class TimeOfDay {
 	@Column(name="time_of_day_id")	
 	private Long timeOfDayId;
 	
-	@Column
+	@Column(unique=true)
 	private String label;
-	
 }

@@ -1,4 +1,6 @@
-package com.wf.api.model.xml;
+package com.wf.api.weather.helper;
+
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,23 +12,24 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@XmlRootElement(name = "place")
+@XmlRootElement(name = "night")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Place {
-	
-	private Long placeId;
+public class Night {
 	
 	@XmlElement
-	private String name;
-	
-	@XmlElement(name = "phenomenon")
 	private String phenomenon;
 	 
 	@XmlElement(name = "tempmin")
 	private float minTemperature;
-	
+	 
 	@XmlElement(name = "tempmax")
 	private float maxTemperature;
 	 
-
+	@XmlElement
+	private String text;
+	
+	
+	@XmlElement(name = "place", type=Place.class)
+	private List<Place> listPlace;
+	
 }

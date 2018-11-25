@@ -42,4 +42,9 @@ public class ForecastControllerTest extends TestCase {
     public void testGetForecast() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(BASE_URI+"/get")).andExpect(MockMvcResultMatchers.status().isOk());
     }
+    
+    @Test
+    public void testGetAllCities() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get(BASE_URI+"/get/cities")).andExpect(MockMvcResultMatchers.status().isOk());
+    }
 }

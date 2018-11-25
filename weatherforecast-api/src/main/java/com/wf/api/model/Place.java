@@ -21,7 +21,6 @@ public class Place {
 	@Column(name="place_id")	
 	private Long placeId;
 	
-	@Column
-	private String name;
-	
+	@Column(unique=true)
+	private String name;	
 }

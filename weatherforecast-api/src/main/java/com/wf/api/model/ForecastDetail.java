@@ -2,6 +2,7 @@ package com.wf.api.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,9 +52,6 @@ public class ForecastDetail {
 	@Column
 	private String text;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "forecastDetail")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "forecastDetail", cascade=CascadeType.ALL)
 	private List<ForecastPlaceDetail> listForecastPlaceDetail;
-	
-	
-	
 }

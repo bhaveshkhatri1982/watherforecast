@@ -9,9 +9,8 @@ import com.wf.api.model.Place;
 
 @Repository("placeRepository")
 @Scope("prototype")
-public interface PlaceRepository extends CrudRepository<Place, Integer>
-{
-	Place findByName(String name);
+public interface PlaceRepository extends CrudRepository<Place, Long>{
 	
+	Place findByName(String name);
 }
 
